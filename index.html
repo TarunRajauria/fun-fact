@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #fact {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="fact"></h1>
+        <button id="nextFact">Next Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "The world's oldest known musical instrument is a 35,000-year-old bone flute.",
+            "The first recorded use of the word 'music' was in the 14th century.",
+            "The longest piece of music ever written is 'The Longplayer' by Mike Batt, which lasts for 1,000 years.",
+            "The first commercially successful rock and roll song was 'Rock Around the Clock' by Bill Haley and His Comets in 1955.",
+            "The most popular song in the world is 'Happy' by Pharrell Williams, with over 4 billion streams on Spotify.",
+            "The world's smallest violin was created by a German craftsman in 1907 and measures only 10 millimeters long.",
+            "The oldest known musical instrument is a 35,000-year-old bone flute.",
+            "Mozart was a child prodigy who composed his first symphony at the age of 8.",
+            "The musical note 'A' is used to tune instruments, but it doesn't actually have a defined pitch.",
+            "The first musical instrument invented was the drum."
+        ];
+
+        const factElement = document.getElementById('fact');
+        const nextFactButton = document.getElementById('nextFact');
+
+        function displayRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factElement.textContent = facts[randomIndex];
+        }
+
+        nextFactButton.addEventListener('click', displayRandomFact);
+
+        // Display a random fact initially
+        displayRandomFact();
+    </script>
+</body>
+</html>
